@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagenes/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Black Jack</title>
+</head>
+
+<body>
+    <html>
+    <!-- Mesa de Juego -->
+    <div class="blackjack">
+        <div class="baraja"></div>
+        <!-- juego Boot -->
+        <div class="contadorboot">
+            <p class="text__count-boot"></p>
+        </div>
+        <div class="continerBoot"></div>
+        <!-- juego user -->
+        <div class="container"></div>
+        <div class="contadorUser">
+            <p class="text__count"></p>
+        </div>
+    </div>
+    <!-- botones usuario -->
+    <div class="botones">
+        <button class="replay">Otra Vez</button>
+        <button id="play" class="play">Play</button>
+        <button id="plantarse" class="plantarse">Plantarse x</button>
+        <button class="carta">Carta +</button>
+    </div>
+    <!-- anuncios -->
+    <span class="win"></span>
+    <button class="restaurarCapital">Restaurar Capital</button>
+    <div class="apuesta">Escoge tu Apuesta
+        <div class="valorapuesta">
+            <img src="imagenes/25.png" alt="25" class="veinticinco">
+            <img src="imagenes/50.png" alt="50" class="cincuenta">
+            <img src="imagenes/100.png" alt="100" class="cien">
+        </div>
+        <span class="total_apuesta"></span>
+    </div>
+    <audio src="sounds/soundrepartir.mp4" preload="auto" class="soudrepartir"></audio>
+    <audio src="sounds/soundbarajar3.mp4"  preload="auto" class="soundbarajar"></audio>
+    
+    <!-- capital user -->
+    <span class="mymoney"></span>
+    <span class="contenedor-fichas"><img src="imagenes/apuesta.png" alt="fichas" class="fichas"><span class="apuesta_actual"></span> </span>
+    </html>
+    <script defer src="js/blackjack.js"></script>
+</body>

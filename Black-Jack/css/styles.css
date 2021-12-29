@@ -1,0 +1,759 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500;600&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+body {
+    background-color: rgb(21, 82, 21);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Dosis', sans-serif;
+    font-size: 16px;
+    position: relative;
+}
+
+/* estilos mesa user */
+.container {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+
+/* estilos mesa boot */
+.continerBoot {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+/* botones user */
+.replay,
+.play {
+    width: 120px;
+    height: 30px;
+    color: hsl(0, 0%, 100%);
+    outline: none;
+    margin: 5px;
+    background-color: hsl(120, 100%, 25%);
+}
+
+.plantarse {
+    width: 120px;
+    height: 30px;
+    color: hsl(0, 0%, 100%);
+    outline: none;
+    background-color: hsl(0, 80%, 50%);
+    margin: 5px;
+}
+
+.carta {
+    width: 120px;
+    height: 30px;
+    color: hsl(0, 0%, 100%);
+    outline: none;
+    margin: 5px;
+    background-color: hsl(120, 100%, 25%);
+}
+
+.restaurarCapital {
+    width: 150px;
+    height: 30px;
+    color: hsl(0, 0%, 100%);
+    outline: none;
+    margin: 5px;
+    background-color: hsl(266, 61%, 30%);
+    display: none;
+    margin-bottom: 90px;
+}
+
+/* diseño carta general */
+.card {
+    width: 145px;
+    height: 225px;
+    padding: 12px;
+    background: hsl(0, 0%, 100%);
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px 5px rgb(2, 19, 2);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    z-index: 2;
+    margin: 5px;
+    animation-name: cajones;
+    animation-duration: .2s;
+    animation-iteration-count: linear;
+}
+
+/* centro de la carta */
+.cuadrado {
+    width: 74px;
+    height: 131px;
+    position: absolute;
+    top: 47px;
+    right: 35px;
+    z-index: 1;
+}
+
+.cardsred {
+    color: red;
+}
+
+.cardsblack {
+    color: black;
+}
+
+span {
+    font-size: 1.5rem;
+}
+
+.black {
+    border: solid 2px black;
+}
+
+.red {
+    border: solid 2px red;
+    color: red;
+}
+
+.up {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.up__simbol {
+    font-size: 2rem;
+    margin: -12px;
+}
+
+.up__number {
+    font-size: 2rem;
+}
+
+.down__number {
+    font-size: 2rem;
+}
+
+.down__simbol {
+    font-size: 2rem;
+    margin: -12px;
+}
+
+.down {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: rotate(180deg);
+    box-sizing: border-box;
+}
+
+.botones {
+    position: absolute;
+    bottom: 50px;
+}
+
+.baraja {
+    width: 145px;
+    height: 225px;
+    padding: 12px;
+    background: hsl(0, 0%, 100%);
+    border-radius: 8px;
+    background: url(../imagenes/back.jpg.png)no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    box-shadow:
+        1px 1px 1px rgba(0, 0, 0, 0.2),
+        5px 5px 0 -3px #f6f6f6,
+        6px 6px 2px -3px rgba(0, 0, 0, 0.2),
+        7px 7px 0 -3px #f6f6f6,
+        9px 9px 2px -3px rgba(0, 0, 0, 0.2);
+}
+
+.cartatapada {
+    width: 145px;
+    height: 225px;
+    padding: 12px;
+    background: hsl(0, 0%, 100%);
+    border-radius: 8px;
+    box-shadow: 5px 5px 10px 5px rgb(2, 19, 2);
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: row;
+    z-index: -1;
+    margin: 5px;
+    background: url(../imagenes/back.jpg.png)no-repeat;
+    background-size: cover;
+    animation-name: cajones;
+    animation-duration: .2s;
+    animation-iteration-count: linear;
+}
+
+@keyframes cajones {
+
+    0% {
+        transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+        top: -500%;
+        left: -900%;
+    }
+
+    100% {
+        top: 0%;
+        left: 0%;
+    }
+}
+
+.k {
+    background: url(../imagenes/k.png)no-repeat;
+    background-size: cover;
+}
+
+.q {
+    background: url(../imagenes/q.png)no-repeat;
+    background-size: cover;
+}
+
+.j {
+    background: url(../imagenes/j.png)no-repeat;
+    background-size: cover;
+}
+
+.a {
+    font-size: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.dosytres {
+    font-size: 2.9rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cuatro {
+    font-size: 2.9rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 50px 16px;
+    text-align: center;
+}
+
+.cinco {
+    font-size: 2.9rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 50px 0px;
+    text-align: center;
+}
+
+.item5 {
+    grid-area: 1/2/3/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.six {
+    font-size: 2.9rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 0px 25px;
+    text-align: center;
+}
+
+.seven {
+    font-size: 2.9rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 0px 3px;
+    text-align: center;
+}
+
+.item7 {
+    grid-area: 1/2/3/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.span7 {
+    grid-area: 3/3/3/3;
+}
+
+.ocho {
+    font-size: 2.9rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    gap: 0px 3px;
+    text-align: center;
+}
+
+.item8 {
+    grid-area: 1/2/3/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.span8 {
+    grid-area: 1/2/4/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.nine {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    text-align: center;
+}
+
+.item9 {
+    grid-area: 1/2/5/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ten {
+    font-size: 2.9rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto auto;
+    text-align: center;
+}
+
+.item10 {
+    grid-area: 1/2/3/3;
+    margin-top: 17px;
+}
+
+.span10 {
+    grid-area: 1/2/6/3;
+    margin-top: 80px;
+}
+
+.contadorUser {
+    display: flex;
+    justify-content: center;
+}
+
+.text__count {
+    margin-top: 5px;
+    max-width: 70px;
+    background: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: solid 1px #39ff14;
+    visibility: hidden;
+    text-align: center;
+}
+
+.contadorboot {
+    display: flex;
+    justify-content: center;
+}
+
+.text__count-boot {
+    max-width: 70px;
+    margin: 5px 0 0 0;
+    background: hsl(0, 0%, 0%);
+    color: hsl(0, 0%, 100%);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: solid 1px #39ff14;
+    visibility: hidden;
+    text-align: center;
+}
+
+.win {
+    width: 100%;
+    height: 200px;
+    background: hsla(0, 0%, 0%, 0.315);
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 2rem;
+    z-index: 3;
+    visibility: hidden;
+}
+
+.apuesta {
+    width: 100%;
+    height: 200px;
+    background: hsla(0, 0%, 0%, 0.315);
+    position: absolute;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.5rem;
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.valorapuesta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+    width: 50px;
+    margin: 15px;
+}
+
+.valorapuesta img {
+    width: 50px;
+}
+
+.total_apuesta {
+    height: 40px;
+    width: 100px;
+    color: hsl(0, 0%, 100%);
+    background: rgba(0, 0, 0, 0.486);
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: solid 1px hsl(0, 0%, 100%);
+    text-align: center;
+}
+
+.hiden {
+    display: none;
+}
+
+.mymoney {
+    position: absolute;
+    top: 15px;
+    color: hsl(0, 0%, 100%);
+    background: rgba(0, 0, 0, 0.486);
+    padding: 12px 40px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: solid 1px hsl(0, 0%, 100%);
+}
+
+.contenedor-fichas {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.fichas {
+    position: absolute;
+    width: 200px;
+    top: 20px;
+    right: 20px;
+}
+
+.apuesta_actual {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+
+.jb {
+    background: url(../imagenes/jb.png) no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+    top: 60px;
+    position: absolute;
+    z-index: 999;
+}
+
+/* gana apuesta */
+
+.winapuesta {
+    position: relative;
+    animation-name: win;
+    animation-duration: 2s;
+    animation-iteration-count: linear forwards;
+    opacity: 0;
+    color: rgb(26, 196, 26);
+    font-weight: 600;
+}
+.lossapuesta {
+    position: relative;
+    animation-name: win;
+    animation-duration: 2s;
+    animation-iteration-count: linear forwards;
+    opacity: 0;
+    color: rgb(226, 29, 29);
+    font-weight: 600;
+}
+.empate {
+    position: relative;
+    animation-name: win;
+    animation-duration: 2s;
+    animation-iteration-count: linear forwards;
+    opacity: 0;
+    color: white;
+    font-weight: 600;
+}
+
+@keyframes win {
+
+    0% {
+        top: 40px;
+        left: -40px;
+        opacity: 1;
+    }
+    100% {
+        top: -10px;
+        left: -40px;
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/*RESPONSIVE*/
+
+
+@media(max-width: 1400px) {
+    @keyframes cajones {
+
+        0% {
+            transform: rotate(-10deg);
+            -ms-transform: rotate(-10deg);
+            top: -200%;
+            left: -700%;
+        }
+
+        100% {
+            top: 0%;
+            left: 0%;
+        }
+    }
+
+    .container {
+        height: 147px;
+    }
+
+    .continerBoot {
+        height: 147px;
+        margin-bottom: 15px;
+    }
+
+    .card {
+        width: 95px;
+        height: 147px;
+        margin: 0 -15px;
+    }
+
+    .cartatapada {
+        width: 95px;
+        height: 147px;
+        margin: -15px;
+    }
+
+    .cuadrado {
+        width: 45px;
+        height: 80px;
+        top: 34px;
+        right: 25px;
+    }
+
+    .baraja {
+        width: 95px;
+        height: 147px;
+        top: 40px;
+        left: 50px;
+    }
+
+    .fichas {
+        width: 80px;
+        top: 40px;
+        right: 15px;
+    }
+
+    .jb {
+        width: 80px;
+        height: 80px;
+        top: 35px;
+    }
+
+    .up__simbol {
+        margin: -5px;
+        font-size: 0.8rem;
+    }
+
+    .down__simbol {
+        margin: -5px;
+        font-size: 0.8rem;
+    }
+
+    .up__number {
+        font-size: 1.3rem;
+    }
+
+    .down__number {
+        font-size: 1.3rem;
+    }
+
+    span {
+        font-size: .6rem;
+    }
+
+    .a {
+        font-size: 2.5rem;
+    }
+
+    .six {
+        gap: 15px 5px;
+    }
+
+    .seven {
+        gap: 15px 0px;
+    }
+
+    .item7 {
+        margin-top: -3px;
+    }
+
+    .ocho {
+        gap: 15px 0px;
+    }
+
+    .item8 {
+        grid-area: 1/2/3/3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+
+    .span8 {
+        margin-top: 30px;
+    }
+
+    .ten {
+        font-size: 2.9rem;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        text-align: center;
+        gap: 7px 0;
+    }
+
+    .item10 {
+        grid-area: 1/2/3/3;
+        margin-top: 12px;
+    }
+
+    .span10 {
+        grid-area: 1/2/6/3;
+        margin-top: 47px;
+    }
+
+    .replay,
+    .play,
+    .carta,
+    .plantarse {
+        width: 80px;
+    }
+}
+
+@media(max-width: 850px) {
+    body {
+        height: 95vh;
+    }
+
+    .baraja {
+        width: 72px;
+        height: 110px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .card {
+        margin: 0 -25px;
+    }
+
+    .a {
+        font-size: 2rem;
+    }
+
+    .up__simbol {
+        font-size: 0.7rem;
+    }
+
+    .down__simbol {
+        font-size: 0.7rem;
+    }
+
+    .cartatapada {
+        width: 95px;
+        height: 147px;
+        margin: -25px;
+    }
+
+    .botones {
+        position: absolute;
+        bottom: 30px;
+    }
+
+    @keyframes cajones {
+
+        0% {
+            transform: rotate(-10deg);
+            -ms-transform: rotate(-10deg);
+            top: -200%;
+            left: -300%;
+        }
+
+        100% {
+            top: 0%;
+            left: 0%;
+        }
+    }
+}
